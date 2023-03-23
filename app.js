@@ -12,7 +12,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 require('dotenv').config()
-mongoose.connect("mongodb+srv://admin:admin@shubhamcluster.wxcvr3e.mongodb.net/todolistDB?retryWrites=true&w=majority");
 mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`);
 //schema
 const itemsSchema ={
